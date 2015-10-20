@@ -78,7 +78,7 @@ class Revision extends Model
      */
     public function getOldAttribute($old)
     {
-        return (array) json_decode($old);
+        return (array) json_decode(base64_decode($old));
     }
 
     /**
@@ -88,7 +88,7 @@ class Revision extends Model
      */
     public function getNewAttribute($new)
     {
-        return (array) json_decode($new);
+        return (array) json_decode(base64_decode($new));
     }
 
     /**
